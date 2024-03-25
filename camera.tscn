@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2wf380t2e3pn"]
+
+[ext_resource type="Script" path="res://camera.gd" id="1_62ohi"]
+
+[node name="CamYaw" type="Node3D"]
+script = ExtResource("1_62ohi")
+
+[node name="CamPitch" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
+
+[node name="CamArm" type="SpringArm3D" parent="CamPitch"]
+spring_length = 3.0
+
+[node name="Camera3D" type="Camera3D" parent="CamPitch/CamArm"]

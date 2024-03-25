@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://fscl3bpb5ug1"]
+
+[ext_resource type="PackedScene" uid="uid://dusbnmdberwt8" path="res://debugGround.tscn" id="1_lg3j5"]
+[ext_resource type="PackedScene" uid="uid://bifif61oy6qoj" path="res://player.tscn" id="1_moph6"]
+[ext_resource type="PackedScene" uid="uid://bksv7rd0srjas" path="res://pauseMenu.tscn" id="2_aayq3"]
+[ext_resource type="PackedScene" uid="uid://d2wf380t2e3pn" path="res://camera.tscn" id="2_do3f3"]
+[ext_resource type="PackedScene" uid="uid://2rtcurglmmpc" path="res://fight_hud.tscn" id="5_tke8l"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Ground" parent="." instance=ExtResource("1_lg3j5")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.980721, 0.00210774, 0.195404, -0.195415, 0.010578, 0.980663, 1.06255e-10, -0.999942, 0.0107859, 0, 8.72331, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_moph6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+
+[node name="CamYaw" parent="Player" instance=ExtResource("2_do3f3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="MenuRoot" parent="." instance=ExtResource("2_aayq3")]
+
+[node name="Opp" parent="." instance=ExtResource("1_moph6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.5, -5)
+script = null
+
+[node name="FightHud" parent="." instance=ExtResource("5_tke8l")]

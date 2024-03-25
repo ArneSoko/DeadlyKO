@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://2rtcurglmmpc"]
+
+[ext_resource type="Script" path="res://fight_hud.gd" id="1_sc18e"]
+[ext_resource type="Texture2D" uid="uid://damhjxiakddd0" path="res://heart.png" id="1_wwecn"]
+[ext_resource type="Texture2D" uid="uid://b7ad1abyra84h" path="res://heart_out.png" id="3_eh45y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x8dn2"]
+font_size = 30
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="FightHud" type="CanvasLayer"]
+script = ExtResource("1_sc18e")
+
+[node name="HealthText" type="Label" parent="."]
+offset_right = 96.0
+offset_bottom = 42.0
+text = "Health"
+label_settings = SubResource("LabelSettings_x8dn2")
+
+[node name="heart" type="TextureRect" parent="."]
+visible = false
+offset_left = 110.0
+offset_right = 2030.0
+offset_bottom = 1920.0
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_wwecn")
+stretch_mode = 4
+
+[node name="heart_out" type="TextureRect" parent="."]
+visible = false
+offset_left = 110.0
+offset_right = 2030.0
+offset_bottom = 1920.0
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("3_eh45y")
+stretch_mode = 4
