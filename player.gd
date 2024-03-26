@@ -10,7 +10,6 @@ extends CharacterBody3D
 #Different parts of the scene, including the player's body, the camera, and the opponent
 @onready var camorigin=$CamYaw
 @onready var pivot=$Pivot
-@onready var body=$Pivot/Body
 @onready var opp=$"../Opp"
 
 func _ready():
