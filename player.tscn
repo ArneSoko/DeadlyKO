@@ -36,3 +36,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7mhp4")
 [node name="Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_2g6vs")
+
+[node name="Hurtbox" type="Node3D" parent="."]
+
+[node name="Hitboxes" type="Node3D" parent="."]
