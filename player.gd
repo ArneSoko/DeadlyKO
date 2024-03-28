@@ -17,12 +17,12 @@ func _ready():
 	pivot.basis=Basis.looking_at(position.direction_to(opp.position))
 	opp.basis=Basis.looking_at(opp.position.direction_to(position))
 	camorigin.basis=Basis.looking_at(position.direction_to(opp.position))
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		
 
 func _physics_process(_delta):
 	#If mouse is captured
-	if Input.mouse_mode != Input.MOUSE_MODE_VISIBLE:
+	if 1: #Input.mouse_mode != Input.MOUSE_MODE_VISIBLE:
 		#Assigned moves to axes
 		var input_dir = Input.get_vector("move_left","move_right","move_forward","move_back")
 		#Adjust movement direction based on camera direction
