@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bksv7rd0srjas"]
+[gd_scene load_steps=5 format=3 uid="uid://bksv7rd0srjas"]
 
 [ext_resource type="Script" path="res://PauseMenu.gd" id="1_nkgxc"]
 [ext_resource type="Script" path="res://ExitButton.gd" id="2_tkcx8"]
 [ext_resource type="Script" path="res://CloseMenu.gd" id="3_k5n0j"]
+[ext_resource type="Script" path="res://Return.gd" id="3_lt1ve"]
 
 [node name="MenuRoot" type="CanvasLayer"]
 process_mode = 3
@@ -27,6 +28,10 @@ script = ExtResource("1_nkgxc")
 [node name="ExitButton" type="Button" parent="MenuLayer/PauseMenu"]
 layout_mode = 2
 script = ExtResource("2_tkcx8")
+
+[node name="Return" type="Button" parent="MenuLayer/PauseMenu"]
+layout_mode = 2
+script = ExtResource("3_lt1ve")
 
 [node name="CloseMenu" type="Button" parent="MenuLayer/PauseMenu"]
 layout_mode = 2
