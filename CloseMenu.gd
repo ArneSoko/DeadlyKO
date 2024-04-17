@@ -8,6 +8,5 @@ func _ready():
 	
 func _button_pressed():
 	get_tree().paused=false
-	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
 	men_back.set_visible(false)
 	menu.set_visible(false)

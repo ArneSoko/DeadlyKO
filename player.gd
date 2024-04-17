@@ -21,20 +21,18 @@ func _ready():
 		
 
 func _physics_process(_delta):
-	#If mouse is captured
-	if 1: #Input.mouse_mode != Input.MOUSE_MODE_VISIBLE:
-		#Assigned moves to axes
-		var input_dir = Input.get_vector("move_left","move_right","move_forward","move_back")
-		#Adjust movement direction based on camera direction
-		var direction = (camorigin.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-		#Rotate to face forward and move
-		if direction:
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
-		#Slow to a stop
-		else:
-			velocity.x = move_toward(velocity.x, 0, speed)
-			velocity.z = move_toward(velocity.z, 0, speed)
+	#Assigned moves to axes
+	var input_dir = Input.get_vector("move_left","move_right","move_forward","move_back")
+	#Adjust movement direction based on camera direction
+	var direction = (camorigin.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	#Rotate to face forward and move
+	if direction:
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
+	#Slow to a stop
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.z = move_toward(velocity.z, 0, speed)
 		
 	#If in the air, fall towards the floor. Literally gravity
 	if not is_on_floor(): 
